@@ -45,7 +45,6 @@ def fftshift(real, imag):
 class PersonalizedFEN(nn.Module):
     def __init__(self, num_layers=17, num_features=64):
         super(PersonalizedFEN, self).__init__()
-        #self.sigmoid=nn.Sigmoid()
         self.hypernet = DualEncoder()
         num_mid_layers = 5
         num_adapt_layers = 5
@@ -56,7 +55,6 @@ class PersonalizedFEN(nn.Module):
             layers.append(nn.Sequential(nn.Conv2d(num_features, num_features, kernel_size=3, padding=1),
                                         nn.BatchNorm2d(num_features),
                                         nn.ReLU(inplace=True)))
-        #layers.append(nn.Conv2d(num_features, 3, kernel_size=3, padding=1))
         self.layers = nn.Sequential(*layers)
         
         layers1 = []
@@ -64,7 +62,6 @@ class PersonalizedFEN(nn.Module):
             layers1.append(nn.Sequential(nn.Conv2d(num_features, num_features, kernel_size=3, padding=1),
                                         nn.BatchNorm2d(num_features),
                                         nn.ReLU(inplace=True)))
-        #layers1.append(nn.Conv2d(num_features, 3, kernel_size=3, padding=1))
         self.layers1 = nn.Sequential(*layers1)
 
         layers2 = []
@@ -74,14 +71,6 @@ class PersonalizedFEN(nn.Module):
                                         nn.ReLU(inplace=True)))
         layers2.append(nn.Conv2d(num_features, 3, kernel_size=3, padding=1))
         self.layers2 = nn.Sequential(*layers2)
-
-        #layers3 = []
-        #for i in range(num_adapt_layers):
-            #layers3.append(nn.Sequential(nn.Conv2d(num_features, num_features, kernel_size=3, padding=1),
-                                        #nn.BatchNorm2d(num_features),
-                                        #nn.ReLU(inplace=True)))
-        #layers3.append(nn.Conv2d(num_features, 3, kernel_size=3, padding=1))
-        #self.layers3 = nn.Sequential(*layers3)
 
         self._initialize_weights()
 
