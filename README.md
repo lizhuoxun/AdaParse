@@ -2,7 +2,7 @@
 ##  Training/testing
 
 ### Training
-run
+Run:
 ```bash
 python adaparse.py --savedir <your model dir> --test 1 --device 0
 ```
