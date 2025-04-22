@@ -20,8 +20,8 @@ Run:
 python adaparse_test.py --test 1 --device <your gpu id> --model_dir <your model dir>+'/set1/model/'
 ```
 
-- You will receive test results from all 20 epochs in a setting. 
-- Change the four best epoch numbers obtained from the four experimental settings of the 'model_list=[1,18,9,15]' line in adaparse_subval.py, in the corresponding order.
+- You will receive test results from all 20 epochs in a setting 
+- Change the four best epoch numbers obtained from the four experimental settings of the 'model_list=[1,18,9,15]' line in adaparse_subval.py, in the corresponding order
 
 Run:
 ```bash
