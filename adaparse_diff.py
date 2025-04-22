@@ -92,7 +92,7 @@ b_s=opt.batch_size
 train_loader = torch.utils.data.DataLoader(train_set,batch_size=b_s,shuffle =True, num_workers=1)
 test_loader = torch.utils.data.DataLoader(test_set,batch_size=b_s,shuffle =True, num_workers=1)
 
-model=fen.AdDnCNN().to(device)   
+model=person_fen.PersonalizedFEN().to(device)   
 optimizer = torch.optim.Adam(model.parameters(), lr=opt.lr, weight_decay=opt.wt_decay)
 
 
