@@ -17,7 +17,7 @@ python adaparse.py --savedir <your model dir> --test 1 --device 0
 
 Run:
 ```bash
-python adaparse_val.py --test 1 --device <your gpu id> --model_dir <your model dir>+'/set1/model/'
+python adaparse_test.py --test 1 --device <your gpu id> --model_dir <your model dir>+'/set1/model/'
 ```
 
 - You will receive test results from all 20 epochs in a setting. 
@@ -25,6 +25,6 @@ python adaparse_val.py --test 1 --device <your gpu id> --model_dir <your model d
 
 Run:
 ```bash
-python adaparse_subval.py --test 1 --model_dir <your model dir>
+python adaparse_mean.py --test 1 --model_dir <your model dir>
 ```
 - You will obtain the average results across all four experimental settings
