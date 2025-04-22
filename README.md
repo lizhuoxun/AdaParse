@@ -6,11 +6,13 @@ run
 ```bash
 python adaparse.py --savedir <your model dir> --test 1 --device 0
 ```
-If you want to modify the train/test split, simply adjust the parameter ‘test’. The accepted range includes [1,2,3,4]. Each value corresponds to one of the four settings described in the paper.
+- To modify the train/test split, simply adjust the parameter ‘test’
+- The accepted range includes [1,2,3,4]
+- Each value corresponds to one of the four settings described in the paper
 
 ### Testing
-- During training, folders are automatically generated with timestamped names. 
-- It's advisable to rename them to match the experimental setting names, e.g., 'set1' corresponds to the '--test' parameter set to 1. 
+- During training, folders are automatically generated with timestamped names
+- Rename them to match the experimental setting names, e.g., 'set1' corresponds to the '--test' parameter set to 1
 
 Run:
 ```bash
@@ -18,9 +20,10 @@ python adaparse_val.py --test 1 --device <your gpu id> --model_dir <your model d
 ```
 
 - You will receive test results from all 20 epochs in a setting. 
-- Fill in the four best epoch numbers obtained from the four experimental settings into the 'model_list=[1,18,9,15]' line in adaparse_subval.py, in the corresponding order.
+- Change the four best epoch numbers obtained from the four experimental settings of the 'model_list=[1,18,9,15]' line in adaparse_subval.py, in the corresponding order.
 
-Then run:
+Run:
 ```bash
 python adaparse_subval.py --test 1 --model_dir <your model dir>
 ```
+- You will obtain the average results across all four experimental settings
