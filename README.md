@@ -12,13 +12,15 @@ If you want to modify the train/test split, simply adjust the parameter â€˜testâ
 - During training, folders are automatically generated with timestamped names. 
 - It's advisable to rename them to match the experimental setting names, e.g., 'set1' corresponds to the '--test' parameter set to 1. 
 
-run
+Run:
 ```bash
 python adaparse_val.py --test 1 --device <your gpu id> --model_dir <your model dir>+'/set1/model/'
 ```
 
+- You will receive test results from all 20 epochs in a setting. 
+- Fill in the four best epoch numbers obtained from the four experimental settings into the 'model_list=[1,18,9,15]' line in adaparse_subval.py, in the corresponding order.
 
-run
+Then run:
 ```bash
 python adaparse_subval.py --test 1 --model_dir <your model dir>
 ```
