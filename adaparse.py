@@ -7,8 +7,8 @@ from scipy import fftpack
 import numpy as np
 from torch import nn
 import datetime
-from models import encoder_rev_eng
-from models import fen
+from models import parsing
+from models import person_fen
 from models import data
 import torch.nn.functional as F
 import argparse
@@ -95,14 +95,11 @@ b_s=opt.batch_size
 train_loader = torch.utils.data.DataLoader(train_set,batch_size=b_s,shuffle =True, num_workers=1)
 test_loader = torch.utils.data.DataLoader(test_set,batch_size=b_s,shuffle =True, num_workers=1)
 
-model=fen.AdDnCNN().to(device)    
+model=person_fen.PersonalizedFEN().to(device)    
 optimizer = torch.optim.Adam(model.parameters(), lr=opt.lr, weight_decay=opt.wt_decay)
 
-model_2=encoder_rev_eng.adencoder(num_hidden=512).to(device)
+model_2=parsing.ParsingNet(num_hidden=512).to(device)
 optimizer_2 = torch.optim.Adam(model_2.parameters(), lr=opt.lr, weight_decay=opt.wt_decay)
-
-#model_3=corr_learner.AdMLP().to(device)
-#optimizer_3 = torch.optim.Adam(model_3.parameters(), lr=opt.lr, weight_decay=opt.wt_decay)
 
 weightn1 = torch.tensor([116/72, 116/19, 116/19,116/6])
 weightn2 = torch.tensor([116/10, 116/74, 116/8,116/24])
