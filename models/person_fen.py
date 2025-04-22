@@ -11,7 +11,7 @@ import torch.nn.functional as F
 from sklearn.metrics import accuracy_score
 from sklearn import metrics
 import argparse
-from models.corr_learner import AdMLP,AdMLP_nge
+from models.encoders import DualEncoder
 
 try:
     from torch import irfft
@@ -46,7 +46,7 @@ class PersonalizedFEN(nn.Module):
     def __init__(self, num_layers=17, num_features=64):
         super(PersonalizedFEN, self).__init__()
         #self.sigmoid=nn.Sigmoid()
-        self.hypernet = AdMLP_nge()
+        self.hypernet = DualEncoder()
         num_mid_layers = 5
         num_adapt_layers = 5
 
