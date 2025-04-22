@@ -88,17 +88,17 @@ class PersonalizedFEN(nn.Module):
         y = self.layers1(y)
         ys = y.size()
         y = y.permute(0,2,3,1)
-        residual = torch.zeros(ys[0],ys[2],ys[3],num_hp*ys[1]).to(device)
+        hpfingerprints = torch.zeros(ys[0],ys[2],ys[3],num_hp*ys[1]).to(device)
         for i in range(ys[0]):
-            residual[i] = F.linear(y[i], weight=w[i])
-        residual = residual.reshape(ys[0],ys[2],ys[3],num_hp,ys[1])
-        residual = residual.permute(3,0,4,1,2)
-        residual = self.layers2(residual.reshape(num_hp*ys[0],ys[1],ys[2],ys[3]))
-        residual_1 = residual.clone()
+            hpfingerprints[i] = F.linear(y[i], weight=w[i])
+        hpfingerprints = hpfingerprints.reshape(ys[0],ys[2],ys[3],num_hp,ys[1])
+        hpfingerprints = hpfingerprints.permute(3,0,4,1,2)
+        hpfingerprints = self.layers2(hpfingerprints.reshape(num_hp*ys[0],ys[1],ys[2],ys[3]))
+        hpfingerprints_1 = hpfingerprints.clone()
         
-        residual_gray=0.299*residual_1[:,0,:,:].clone()+0.587*residual_1[:,1,:,:].clone()+0.114*residual_1[:,2,:,:].clone()
+        hpfingerprints_gray=0.299*hpfingerprints_1[:,0,:,:].clone()+0.587*hpfingerprints_1[:,1,:,:].clone()+0.114*hpfingerprints_1[:,2,:,:].clone()
         
-        thirdPart_fft_1=rfft(residual_gray, signal_ndim=2)
+        thirdPart_fft_1=rfft(hpfingerprints_gray, signal_ndim=2)
         
         thirdPart_fft_1_orig=thirdPart_fft_1.clone()
         
@@ -113,4 +113,4 @@ class PersonalizedFEN(nn.Module):
         max_value=torch.max(thirdPart_fft_3)
         thirdPart_fft_4=thirdPart_fft_1.clone()
         thirdPart_fft_4=torch.transpose(thirdPart_fft_4,1,2)
-        return thirdPart_fft_1,thirdPart_fft_2, max_value, thirdPart_fft_1_orig,residual, thirdPart_fft_4, residual_gray
+        return thirdPart_fft_1,thirdPart_fft_2, max_value, thirdPart_fft_1_orig,hpfingerprints, thirdPart_fft_4, hpfingerprints_gray
