@@ -257,7 +257,7 @@ for epoch in range(epochs):
             g_t_loss_batch[i,:]=ground_truth_loss[labels[i]]
             g_t_loss_batch_9[i,:]=ground_truth_loss_9[labels[i]]
         
-        out,loss, out_orig,residual,outn1,outn2,outn3,outn4,outn5,outn6,outn7,out3L1,out3L2,out3L3,outh9L1, outh9L2,outh9L3,outh9L4,outh9L5,outh9L6,outh9L7,outh9L8,outh9L9,outh9L10=train(Variable(torch.FloatTensor(inputs)),Variable(torch.LongTensor(labels)), Variable(torch.FloatTensor(g_t_net_batch)),Variable(torch.FloatTensor(g_t_loss_batch)),Variable(torch.FloatTensor(g_t_loss_batch_9)))
+        out,loss, out_orig,hpfingerprints,outn1,outn2,outn3,outn4,outn5,outn6,outn7,out3L1,out3L2,out3L3,outh9L1, outh9L2,outh9L3,outh9L4,outh9L5,outh9L6,outh9L7,outh9L8,outh9L9,outh9L10=train(Variable(torch.FloatTensor(inputs)),Variable(torch.LongTensor(labels)), Variable(torch.FloatTensor(g_t_net_batch)),Variable(torch.FloatTensor(g_t_loss_batch)),Variable(torch.FloatTensor(g_t_loss_batch_9)))
         
         count+=1
         
