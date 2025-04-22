@@ -3,10 +3,10 @@
 ##########################
 import torch
 import torch.nn as nn
-class encoder(torch.nn.Module):
+class ParsingNet(torch.nn.Module):
 
     def __init__(self,num_hidden):
-        super(encoder, self).__init__()
+        super(ParsingNet, self).__init__()
         
         ### ENCODER
         
