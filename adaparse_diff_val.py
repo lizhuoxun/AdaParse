@@ -68,7 +68,7 @@ test_set=data.FilterableImageFolder(data_path, transform_train, valid_classes=te
 b_s=opt.batch_size
 test_loader = torch.utils.data.DataLoader(test_set,batch_size=b_s,shuffle =True, num_workers=1)
 
-model=fen.AdDnCNN().to(device)
+model=person_fen.PersonalizedFEN().to(device)
    
 model_params = list(model.parameters())    
 optimizer = torch.optim.Adam(model_params, lr=opt.lr)
