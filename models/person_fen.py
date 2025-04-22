@@ -42,9 +42,9 @@ def fftshift(real, imag):
     return real, imag
 
 
-class Personalized_FEN(nn.Module):
+class PersonalizedFEN(nn.Module):
     def __init__(self, num_layers=17, num_features=64):
-        super(Personalized_FEN, self).__init__()
+        super(PersonalizedFEN, self).__init__()
         #self.sigmoid=nn.Sigmoid()
         self.hypernet = AdMLP_nge()
         num_mid_layers = 5
