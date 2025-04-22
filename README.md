@@ -11,6 +11,7 @@ If you want to modify the train/test split, simply adjust the parameter â€˜testâ
 ### Testing
 - During training, folders are automatically generated with timestamped names. 
 - It's advisable to rename them to match the experimental configuration names, e.g., 'set1' corresponds to the '--test' parameter set to 1. 
+
 run
 ```bash
 python adaparse_val.py --test 1 --device <your gpu id> --model_dir <your model dir>+'/set1/model/'
