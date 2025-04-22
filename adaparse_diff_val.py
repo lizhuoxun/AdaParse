@@ -7,8 +7,8 @@ from scipy import fftpack
 import numpy as np
 from torch import nn
 import datetime
-from models import encoder_rev_eng
-from models import fen
+from models import parsing
+from models import person_fen
 from models import corr_learner
 from models import data
 import torch.nn.functional as F
