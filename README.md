@@ -10,7 +10,7 @@ If you want to modify the train/test split, simply adjust the parameter â€˜testâ
 
 ### Testing
 - During training, folders are automatically generated with timestamped names. 
-- It's advisable to rename them to match the experimental configuration names, e.g., 'set1' corresponds to the '--test' parameter set to 1. 
+- It's advisable to rename them to match the experimental setting names, e.g., 'set1' corresponds to the '--test' parameter set to 1. 
 
 run
 ```bash
