@@ -170,17 +170,17 @@ def train(batch, labels,g_t_net,g_t_loss, g_t_loss_9):
     model.train()
     model_2.train()
 
-    y,low_freq_part,max_value,y_orig,residual,y_trans,residual_gray=model(batch.to(device),device)
+    y,low_freq_part,max_value,y_orig,hpfingerprints,y_trans,hpfingerprints_gray=model(batch.to(device),device)
 
-    outn1,outn2,outn3,outn4, outn5,outn6,outn7,out3L1,out3L2,out3L3,outh9L1,outh9L2,outh9L3,outh9L4,outh9L5,outh9L6,outh9L7,outh9L8,outh9L9,outh9L10=model_2(residual)
+    outn1,outn2,outn3,outn4, outn5,outn6,outn7,out3L1,out3L2,out3L3,outh9L1,outh9L2,outh9L3,outh9L4,outh9L5,outh9L6,outh9L7,outh9L8,outh9L9,outh9L10=model_2(hpfingerprints)
    
     
     n=25
     th=10000*torch.ones(1).to(device)
-    zero=torch.zeros(residual_gray.shape, dtype=torch.float32).to(device)
+    zero=torch.zeros(hpfingerprints_gray.shape, dtype=torch.float32).to(device)
     zero1=torch.zeros([low_freq_part.shape[0],2*n+1,2*n+1], dtype=torch.float32).to(device)  
 
-    loss1=0.1*l1(residual_gray,zero).to(device)
+    loss1=0.1*l1(hpfingerprints_gray,zero).to(device)
     loss2=0.05*l1(low_freq_part,zero1).to(device)
     loss3=-0.001*torch.min(torch.cat([max_value.unsqueeze(0),th])).to(device) 
     loss4=l1(y,y_trans).to(device)
@@ -225,12 +225,10 @@ def train(batch, labels,g_t_net,g_t_loss, g_t_loss_9):
     optimizer.zero_grad()
     optimizer_2.zero_grad()
     loss.backward()
-    #nn.utils.clip_grad_norm_(model.parameters(), clip_value)
-    #nn.utils.clip_grad_norm_(model_2.parameters(), clip_value)
     optimizer.step()
     optimizer_2.step()
     
-    return y, loss.item(), y_orig,residual, outn1,outn2,outn3,outn4,outn5,outn6,outn7,out3L1,out3L2,out3L3,outh9L1,outh9L2,outh9L3,outh9L4,outh9L5,outh9L6,outh9L7,outh9L8,outh9L9,outh9L10
+    return y, loss.item(), y_orig,hpfingerprints, outn1,outn2,outn3,outn4,outn5,outn6,outn7,out3L1,out3L2,out3L3,outh9L1,outh9L2,outh9L3,outh9L4,outh9L5,outh9L6,outh9L7,outh9L8,outh9L9,outh9L10
 
 
 print(len(train_set))
