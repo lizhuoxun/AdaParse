@@ -69,5 +69,4 @@ class DualEncoder(nn.Module):
         y=self.sigmoid(y)
         y=y.reshape(num_hp,bs,-1).transpose(0,1)
         y=y.reshape(bs,num_hp*64,64)
-        #y=y/y.sum(dim=1,keepdim=True)
         return y
