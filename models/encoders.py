@@ -27,7 +27,6 @@ class DualEncoder(nn.Module):
                                         nn.MaxPool2d(kernel_size=2, stride=2, padding=0)))
         self.extractor = nn.Sequential(*layers)
 
-        #self.wt_c = nn.Parameter(torch.Tensor(1,4096))
         self.fc1 = nn.Linear(512*8*8, 4096)
         self.bn1 = nn.BatchNorm1d(4096)
         self.fc2 = nn.Linear(4096, 1024)
