@@ -55,7 +55,7 @@ transforms.Normalize((0.6490, 0.6490, 0.6490), (0.1269, 0.1269, 0.1269))
 
 b_s=opt.batch_size
 
-model=fen.AdDnCNN().to(device)
+model=person_fen.PersonalizedFEN().to(device)
    
 model_params = list(model.parameters())    
 optimizer = torch.optim.Adam(model_params, lr=opt.lr)
