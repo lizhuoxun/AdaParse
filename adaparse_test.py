@@ -9,7 +9,7 @@ from torch import nn
 import datetime
 from models import parsing
 from models import person_fen
-from models import corr_learner
+from models import encoders
 from models import data
 import torch.nn.functional as F
 import argparse
