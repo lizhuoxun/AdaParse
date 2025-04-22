@@ -55,7 +55,7 @@ transforms.Normalize((0.6490, 0.6490, 0.6490), (0.1269, 0.1269, 0.1269))
 
 b_s=opt.batch_size
 
-model=fen.AdDnCNN().to(device)   
+model=person_fen.PersonalizedFEN().to(device)   
 model_2=encoder_rev_eng.adencoder(num_hidden=512).to(device)
 
 l1=torch.nn.L1Loss().to(device)
