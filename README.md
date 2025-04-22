@@ -12,3 +12,8 @@ run
 ```bash
 python adaparse_val.py --test 1 --device <your gpu id> --model_dir <your model dir>+'/set1/model/'
 ```
+
+run
+```bash
+python adaparse_subval.py --test 1 --model_dir <your model dir>
+```
