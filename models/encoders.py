@@ -16,7 +16,7 @@ from torch.nn.init import xavier_uniform_
 class DualEncoder(nn.Module):
     def __init__(self, num_hp=25, num_features=64):
         super(DualEncoder, self).__init__()
-        self.cmcode = nn.Parameter(torch.Tensor(1,256))       
+        self.basecode = nn.Parameter(torch.Tensor(1,256))       
         self.hpcode = nn.Parameter(torch.Tensor(num_hp,256))
 
         layers = []
@@ -43,7 +43,7 @@ class DualEncoder(nn.Module):
         self._init_pm()
 
     def _init_pm(self):
-        xavier_uniform_(self.cmcode)
+        xavier_uniform_(self.basecode)
         xavier_uniform_(self.hpcode)
         #xavier_uniform_(self.wt_c)
 
@@ -58,10 +58,10 @@ class DualEncoder(nn.Module):
         features=self.bn2(features)
         features=self.relu(features)
         features=self.fc3(features)
-        cmcode=self.cmcode.repeat(num_hp*bs,1)
+        cmcode=self.basecode.repeat(num_hp*bs,1)
         hpcode=self.hpcode.unsqueeze(1).repeat(1,bs,1)
         features=features.unsqueeze(0).repeat(num_hp,1,1)
-        code=torch.cat([cmcode.reshape(num_hp,bs,-1),hpcode,features],dim=2)
+        code=torch.cat([basecode.reshape(num_hp,bs,-1),hpcode,features],dim=2)
         y=self.fc4(code.reshape(num_hp*bs,-1))
         y=self.bn3(y)
         y=self.relu(y)
