@@ -73,7 +73,7 @@ model=person_fen.PersonalizedFEN().to(device)
 model_params = list(model.parameters())    
 optimizer = torch.optim.Adam(model_params, lr=opt.lr)
 
-model_2=encoder_rev_eng.adencoder(num_hidden=512).to(device)
+model_2=parsing.ParsingNet(num_hidden=512).to(device)
 optimizer_2 = torch.optim.Adam(model_2.parameters(), lr=opt.lr)
 
 l1=torch.nn.L1Loss().to(device)
