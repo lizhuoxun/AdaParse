@@ -25,6 +25,6 @@ python adaparse_test.py --test 1 --device <your gpu id> --model_dir <your model 
 
 Run:
 ```bash
-python adaparse_mean.py --test 1 --model_dir <your model dir>
+python adaparse_average.py --test 1 --model_dir <your model dir>
 ```
 - You will obtain the average results across all four experimental settings
