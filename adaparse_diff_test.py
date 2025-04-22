@@ -84,8 +84,8 @@ def validation(batch,labels,g_t_net,g_t_loss):
     model_2.eval()
     batch_size=len(labels)
     with torch.no_grad():
-        y,low_freq_part,max_value,y_orig,residual,y_trans,residual_gray=model(batch.to(device),device)
-        outn1,outn2,outn3,outn4,outn5,outn6,outn7,out3L1,out3L2,out3L3,outh9L1,outh9L2,outh9L3,outh9L4,outh9L5,outh9L6,outh9L7,outh9L8,outh9L9,outh9L10=model_2(residual)
+        y,low_freq_part,max_value,y_orig,hpfingerprints,y_trans,hpfingerprints_gray=model(batch.to(device),device)
+        outn1,outn2,outn3,outn4,outn5,outn6,outn7,out3L1,out3L2,out3L3,outh9L1,outh9L2,outh9L3,outh9L4,outh9L5,outh9L6,outh9L7,outh9L8,outh9L9,outh9L10=model_2(hpfingerprints)
     
         outn2=torch.argmax(outn2,-1).to(device)
         outn3=torch.argmax(outn3,-1).to(device)
