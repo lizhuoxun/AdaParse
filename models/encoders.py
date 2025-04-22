@@ -39,12 +39,11 @@ class DualEncoder(nn.Module):
         self.relu=nn.ReLU()
         self.sigmoid=nn.Sigmoid()
 
-        self._init_pm()
+        self._init_MAEncoder()
 
-    def _init_pm(self):
+    def _init_MAEncoder(self):
         xavier_uniform_(self.basecode)
         xavier_uniform_(self.hpcode)
-        #xavier_uniform_(self.wt_c)
 
     def forward(self, inputs, num_hp=25):
         bs=inputs.size(0)
