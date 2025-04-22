@@ -96,7 +96,7 @@ model=person_fen.PersonalizedFEN().to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=opt.lr, weight_decay=opt.wt_decay)
 
 
-model_2=encoder_rev_eng.adencoder(num_hidden=512).to(device)
+model_2=parsing.ParsingNet(num_hidden=512).to(device)
 optimizer_2 = torch.optim.Adam(model_2.parameters(), lr=opt.lr, weight_decay=opt.wt_decay)
 
 weightn1 = torch.tensor([123/72, 123/26, 123/19,123/6])
