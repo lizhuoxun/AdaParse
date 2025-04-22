@@ -1,4 +1,5 @@
 # AdaParse
+> This repository is official implementation for AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering.
 ##  Training/testing
 
 ### Training
