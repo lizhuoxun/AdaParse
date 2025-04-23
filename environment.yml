@@ -1,0 +1,14 @@
+name: adaparse
+channels:
+  - defaults
+dependencies:
+  - python=3.9.16
+  - cudatoolkit=11.3
+  - torchaudio==0.11.0
+  - torchvision==0.12.0
+  - pytorch==1.11.0
+  - iopath
+  - fvcore
+  - nvidiacub
+  - ffmpeg
+prefix: /home/ubuntu/anaconda3/envs/geneface
