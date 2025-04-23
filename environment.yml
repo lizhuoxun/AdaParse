@@ -11,4 +11,4 @@ dependencies:
   - fvcore
   - nvidiacub
   - ffmpeg
-prefix: /home/ubuntu/anaconda3/envs/geneface
+prefix: /home/ubuntu/anaconda3/envs/adaparse
