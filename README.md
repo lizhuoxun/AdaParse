@@ -15,6 +15,7 @@ conda env create -f environment.yml
 ### Training
 Run:
 ```bash
+conda activate adaparse
 python adaparse.py --savedir <your model dir> --test 1 --device 0
 ```
 - To modify the train/test split, simply adjust the parameter ‘test’
