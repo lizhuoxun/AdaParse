@@ -2,6 +2,10 @@
 > This repository is official implementation for AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering.
 ##  Training/testing
 
+### Datasets
+- Download from [link](https://github.com/vishal3477/Reverse_Engineering_GMs)
+- Put the 116 folders in a folder named data_final
+
 ### Training
 Run:
 ```bash
