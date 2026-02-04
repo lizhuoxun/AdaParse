@@ -87,12 +87,9 @@ class PersonalizedFEN(nn.Module):
         w = self.hypernet(y)
         y = self.layers1(y)
         ys = y.size()
-        y = y.permute(0,2,3,1)
-        hpfingerprints = torch.zeros(ys[0],ys[2],ys[3],num_hp*ys[1]).to(device)
-        for i in range(ys[0]):
-            hpfingerprints[i] = F.linear(y[i], weight=w[i])
-        hpfingerprints = hpfingerprints.reshape(ys[0],ys[2],ys[3],num_hp,ys[1])
-        hpfingerprints = hpfingerprints.permute(3,0,4,1,2)
+        hpfingerprints = torch.einsum('bchw,boc->bohw',y,w)
+        hpfingerprints = hpfingerprints.reshape(ys[0],num_hp,ys[1],ys[2],ys[3])
+        hpfingerprints = hpfingerprints.permute(1,0,2,3,4)
         hpfingerprints = self.layers2(hpfingerprints.reshape(num_hp*ys[0],ys[1],ys[2],ys[3]))
         hpfingerprints_1 = hpfingerprints.clone()
         
