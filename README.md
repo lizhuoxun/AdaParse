@@ -9,7 +9,7 @@ conda env create -f environment.yml
 ```
 
 ### Datasets
-- Download from [Reverse_Engineering_GMs](https://github.com/vishal3477/Reverse_Engineering_GMs)
+- Download from [Reverse_Engineering_GMs](https://github.com/vishal3477/Reverse_Engineering_GMs/blob/main/dataset/readme.md)
 - Put the 116 folders in a folder named 'data_final'
 
 ### Training
