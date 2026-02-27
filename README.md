@@ -1,8 +1,8 @@
-# AdaParse
-> This repository is official implementation for AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering.
+# `AdaParse (IEEE TIFS 2026)`
+This repository is official implementation of our **TIFS 2026** paper "AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering".
 
 ## 🔥 NEWS 🔥
-- [2026/02/26] Our Paper is accepted to IEEE Transactions on Information Forensics and Security!
+- [2026/02/26] Our Paper is accepted to **IEEE Transactions on Information Forensics and Security**!
 
 ##  Training/testing
 
