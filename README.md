@@ -1,5 +1,14 @@
+<div align="center">
+  
 # `AdaParse (IEEE TIFS 2026)`
-This repository is official implementation of our **TIFS 2026** paper "AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering".
+
+</div>
+
+### This repository is the official implementation of:
+
+- ***TIFS 2026***: "AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering".
+  
+Yu Zheng, Zhuoxun Li, Bingyao Yu, Jie Zhou, Jiwen Lu
 
 ## 🔥 NEWS 🔥
 - [2026/02/26] Our Paper is accepted to **IEEE Transactions on Information Forensics and Security**!
