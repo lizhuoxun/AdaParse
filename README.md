@@ -52,3 +52,14 @@ Run:
 python adaparse_average.py --test 1 --model_dir <your model dir>
 ```
 - You will obtain the average results across all four experimental settings
+
+If you would like to use our work, please cite:
+```bash
+@article{zheng2026adaparse,
+  title={AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering},
+  author={Zheng, Yu and Li, Zhuoxun and Yu, Bingyao and Zhou, Jie and Lu, Jiwen},
+  journal={IEEE Transactions on Information Forensics and Security},
+  year={2026},
+  publisher={IEEE}
+}
+```
