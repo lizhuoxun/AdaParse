@@ -8,7 +8,7 @@
 
 - ***TIFS 2026***: "AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering".
   
-Yu Zheng, Zhuoxun Li, Bingyao Yu, Jie Zhou, Jiwen Lu
+Yu Zheng*, Zhuoxun Li*, Bingyao Yu, Jie Zhou, Jiwen Lu
 
 ## 📊 Framework
 ![AdaParse Architecture](paper/main_framework_v3.png)
