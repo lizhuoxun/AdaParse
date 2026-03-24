@@ -10,6 +10,11 @@
   
 Yu Zheng, Zhuoxun Li, Bingyao Yu, Jie Zhou, Jiwen Lu
 
+## 📊 Framework
+<object data="paper/main_framework_v3.pdf" type="application/pdf" width="100%" height="600px">
+    <p>无法显示PDF？请<a href="paper/main_framework_v3.pdf">点击下载</a>查看方法框图。</p>
+</object>
+
 ## 🔥 NEWS 🔥
 - [2026/02/26] Our Paper is accepted to **IEEE Transactions on Information Forensics and Security**!
 
